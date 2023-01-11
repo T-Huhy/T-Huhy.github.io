@@ -1,0 +1,403 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.clear {
+  clear: both;
+}
+
+#main {
+}
+
+#header-introduce {
+  padding: 7px 25px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 110px;
+  background-color: rgb(25, 247, 210);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#header-introduce #logo-introduce a {
+  font-size: 60px;
+  width: 382px;
+  height: 39px;
+  text-decoration: none;
+  color: #000;
+}
+
+.flash {
+  animation: color-logo 2s linear infinite;
+}
+
+#header-introduce .fa-shoe-prints {
+  font-size: 40px;
+  transform: rotate(-45deg);
+}
+
+@keyframes color-logo {
+  0% {
+    color: red;
+  }
+
+  50% {
+    color: blue;
+  }
+
+  100% {
+    color: red;
+  }
+}
+
+#header-introduce .introduce a {
+  line-height: 46px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+#nav {
+  display: inline-block;
+}
+
+#nav .subnav {
+  font-size: 14px;
+  list-style-type: none;
+  text-decoration: none;
+  display: none;
+  min-width: 160px;
+  top: 100%;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: modalFade ease 0.5s;
+}
+
+#nav > li {
+  display: inline-block;
+}
+
+#nav li {
+  position: relative;
+}
+
+#nav > li > a {
+  color: #000;
+  text-transform: uppercase;
+}
+
+#nav li a {
+  text-decoration: none;
+  line-height: 46px;
+  padding: 0 24px;
+  display: block;
+  font-size: 20px;
+}
+
+#nav li:hover .subnav {
+  display: block;
+}
+
+#nav .subnav li:hover a,
+#nav > li:hover > a {
+  color: red;
+  /* background-color: #ccc; */
+}
+
+#header-introduce .introduce a:hover {
+  color: red;
+}
+
+#nav .subnav a {
+  color: #000;
+  padding: 0 12px;
+  line-height: 38px;
+}
+
+#header-introduce .user-btn,
+#header-introduce .buy-btn,
+#header-introduce .search-btn {
+  float: right;
+}
+
+#header-introduce .user-btn:hover,
+#header-introduce .buy-btn:hover,
+#header-introduce .search-btn:hover {
+  opacity: 0.7;
+}
+
+#header-introduce .user-btn button,
+#header-introduce .buy-btn button,
+#header-introduce .search-btn button {
+  background-color: rgb(25, 247, 210);
+  color: #000;
+  font-size: 20px;
+  line-height: 46px;
+  padding: 0px 15px;
+  margin-top: 26px;
+  cursor: pointer;
+  border: none;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.img-introduce {
+  position: relative;
+  margin-top: 110px;
+  padding-bottom: 20%;
+  background: url("/Web_sell_sneaker/img/sneaker_introduce.jpg") top center /
+    cover no-repeat;
+}
+
+.sample {
+  position: relative;
+}
+
+.sample .title {
+  font-weight: 400;
+  /* text-align: center; */
+  margin: 40px 40px 0;
+  letter-spacing: 4px;
+  transform: translateX(5%);
+}
+
+@keyframes color-change {
+  0% {
+    color: rgb(25, 247, 210);
+  }
+
+  50% {
+    color: #f44336;
+  }
+
+  100% {
+    color: rgb(25, 247, 210);
+  }
+}
+
+.sample .title a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  box-sizing: inherit;
+  border-left: rgb(25, 247, 210) solid 8px;
+  text-decoration: none;
+  animation: color-change 2s linear infinite;
+}
+
+.sample .icon-sample {
+  animation: color-change 2s linear infinite;
+  font-size: 30px;
+  transform: rotate(-45deg);
+}
+
+.sample .sneaker-list {
+  padding: 16px 0;
+  /* overflow: hidden; */
+}
+
+.sample .sneaker-item {
+  float: left;
+  padding: 32px 0;
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+.sample .sneaker-name {
+  font-size: 20px;
+  line-height: 1.5;
+  padding-bottom: 10px;
+}
+
+.sample .sneaker-name:hover {
+  color: #f44336;
+  cursor: pointer;
+}
+
+.sample .sneaker-price {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.sample .sneaker-img {
+  margin-top: 15px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  cursor: pointer;
+}
+
+/* Log-in */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  float: right;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fff;
+  width: 400px;
+  min-height: 200px;
+  max-width: calc(100% - 32px);
+  animation: modalFadeIn ease 0.5s;
+}
+
+.modal-close {
+  font-size: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #000;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: red;
+}
+
+.modal-header {
+  height: 130px;
+  background-color: rgb(25, 247, 210);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #000;
+}
+
+.modal button {
+  background-color: rgb(25, 247, 210);
+  border: none;
+  margin-top: 10px;
+  font-size: 15px;
+  padding: 6px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin-left: 155px;
+}
+
+.modal button:hover {
+  background-color: rgba(25, 247, 210, 0.6);
+  color: red;
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.modal-label {
+  display: block;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.modal-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 15px;
+}
+
+.modal-footer {
+  float: right;
+  margin: 15px 0;
+}
+
+.modal-footer .help {
+  color: blue;
+  text-decoration: none;
+}
+
+.modal-footer .help:hover {
+  color: #f44336;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-140px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tks {
+  position: relative;
+}
+
+.tks img {
+  width: 100%;
+}
+
+.profile {
+  padding: 64px 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+.profile .profile-contact {
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.profile .profile-contact a {
+  color: #000;
+  margin: 15px 0;
+}
+
+.profile .footer a {
+  font-size: 50px;
+  text-decoration: none;
+  margin: 0 20px;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+}
+
+.footer a:hover {
+  opacity: 0.6;
+}
